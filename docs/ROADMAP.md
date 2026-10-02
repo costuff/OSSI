@@ -9,10 +9,9 @@
 5. Capture inbox with immediate local persistence and no synchronous inference dependency.
 6. Event normalization for a manually generated or macOS application event.
 7. Current context and simple episode grouping within a session.
-8. `InferenceProvider` and a real `AMDProvider` request.
-9. Provider diagnostics: provider, model, request ID, timestamp, tokens, latency, and failures.
-10. Privacy state and forget-session operation.
-11. Automated tests for models, storage, session continuity, capture latency, normalization, recall, and provider error handling.
+8. `InferenceProvider` request/result interfaces only; no provider implementation or network call.
+9. Privacy state and forget-session operation.
+10. Automated tests for models, storage, session continuity, capture latency, normalization, recall, and malformed data.
 
 ## Should Have: hackathon experience
 
@@ -80,7 +79,7 @@ Implement typed entities for projects, sessions, events, contexts, episodes, cap
 
 ### Phase 2: connect AMD
 
-Implement the provider protocol, AMD endpoint configuration, structured generation, timeouts, bounded prompts, metrics, and a deterministic fallback. Run one real semantic episode request and record diagnostics.
+Implement AMD endpoint configuration, structured generation, timeouts, bounded prompts, metrics, and a deterministic fallback behind the Phase 1 provider interfaces. Run one real semantic episode request and record diagnostics.
 
 ### Phase 3: add macOS observation
 

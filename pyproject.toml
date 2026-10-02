@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ossi"
+version = "0.1.0"
+description = "Local-first contextual memory foundation for OSSI"
+requires-python = ">=3.9"
+
+[project.scripts]
+ossi = "ossi.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ossi*"]
